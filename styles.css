@@ -1,7 +1,7 @@
 /* ========================================================
    SpaceWise Academy: Space & Rocketry Winter Camp 2026
    COE GEMS International School — Dubai Hills
-   Theme: Cosmic Space, Stars & Milky Galaxy (Dark STEM Theme)
+   Theme: Modern Aerospace & STEM Innovation Theme
    ======================================================== */
 
 /* ---------- Google Fonts ---------- */
@@ -9,37 +9,37 @@
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
-  /* Cosmic Space & Milky Galaxy Palette */
-  --color-bg-primary: #050814;
-  --color-bg-secondary: #091026;
-  --color-bg-tertiary: #0f1938;
-  --color-bg-card: rgba(13, 21, 46, 0.75);
-  --color-bg-glass: rgba(15, 23, 50, 0.65);
-  --color-bg-glass-hover: rgba(22, 34, 72, 0.85);
-  --color-bg-white: #0d1533;
+  /* Crisp Modern STEM & Aerospace Palette */
+  --color-bg-primary: #f8fafc;
+  --color-bg-secondary: #f1f5f9;
+  --color-bg-tertiary: #e2e8f0;
+  --color-bg-card: rgba(255, 255, 255, 0.94);
+  --color-bg-card-hover: #ffffff;
+  --color-bg-card-alt: #f8fafc;
+  --color-bg-glass: rgba(255, 255, 255, 0.85);
+  --color-bg-glass-hover: rgba(255, 255, 255, 0.98);
+  --color-bg-white: #ffffff;
 
-  --color-accent-primary: #38bdf8;
-  --color-accent-secondary: #818cf8;
-  --color-accent-warm: #fbbf24;
-  --color-accent-orange: #f97316;
-  --color-accent-green: #34d399;
+  --color-accent-primary: #0284c7;
+  --color-accent-secondary: #2563eb;
+  --color-accent-warm: #f59e0b;
+  --color-accent-orange: #ea580c;
+  --color-accent-green: #10b981;
+  --color-accent-purple: #7c3aed;
 
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #94a3b8;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #334155;
   --color-text-muted: #64748b;
 
-  --color-border: rgba(148, 163, 184, 0.14);
-  --color-border-hover: rgba(56, 189, 248, 0.45);
+  --color-border: rgba(15, 23, 42, 0.09);
+  --color-border-hover: rgba(2, 132, 199, 0.35);
 
   /* Gradients */
-  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(56, 189, 248, 0.18) 0%, transparent 65%),
-                   radial-gradient(ellipse at 80% 30%, rgba(129, 140, 248, 0.15) 0%, transparent 50%),
-                   linear-gradient(180deg, #050814 0%, #091026 100%);
-  --gradient-accent: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
-  --gradient-space: linear-gradient(135deg, #818cf8 0%, #38bdf8 50%, #34d399 100%);
-  --gradient-warm: linear-gradient(135deg, #f59e0b, #ea580c);
-  --gradient-card: linear-gradient(145deg, rgba(22, 34, 72, 0.6), rgba(11, 18, 42, 0.8));
-  --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+  --gradient-accent: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  --gradient-space: linear-gradient(135deg, #0284c7 0%, #7c3aed 50%, #f59e0b 100%);
+  --gradient-warm: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
+  --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.92));
+  --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(2, 132, 199, 0.12) 0%, transparent 70%);
 
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
@@ -63,11 +63,11 @@
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.45);
-  --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 24px rgba(56, 189, 248, 0.18);
-  --shadow-glow: 0 0 35px rgba(56, 189, 248, 0.25);
-  --shadow-glow-warm: 0 0 35px rgba(245, 158, 11, 0.25);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 4px 20px rgba(15, 23, 42, 0.07), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-card-hover: 0 14px 36px rgba(15, 23, 42, 0.11), 0 0 20px rgba(2, 132, 199, 0.12);
+  --shadow-glow: 0 0 35px rgba(2, 132, 199, 0.15);
+  --shadow-glow-warm: 0 0 35px rgba(234, 88, 12, 0.15);
 
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -99,9 +99,11 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-bg-primary);
   background-image: 
-    radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 85% 60%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.05) 0%, transparent 45%);
+    radial-gradient(circle at 12% 18%, rgba(2, 132, 199, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 88% 45%, rgba(124, 58, 237, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 50% 85%, rgba(234, 88, 12, 0.04) 0%, transparent 40%),
+    radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
   background-attachment: fixed;
   color: var(--color-text-primary);
   line-height: 1.7;
@@ -121,7 +123,7 @@ a {
 }
 
 a:hover {
-  color: #7dd3fc;
+  color: var(--color-accent-secondary);
 }
 
 .container {
@@ -253,11 +255,11 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   height: var(--nav-height);
   z-index: 1000;
-  background: rgba(5, 8, 20, 0.88);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  background: rgba(3, 6, 16, 0.98);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.22);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   transition: all var(--transition-base);
 }
 
@@ -296,15 +298,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-links a {
-  color: var(--color-text-secondary);
+  color: #e2e8f0;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: color var(--transition-fast);
   position: relative;
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  color: #38bdf8;
 }
 
 /* Dropdown Menu for Previous Camps */
@@ -318,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 5px;
   cursor: pointer;
-  color: var(--color-text-secondary) !important;
+  color: #e2e8f0 !important;
   font-size: 0.9rem;
   font-weight: 600;
   padding: 6px 10px;
@@ -329,7 +331,7 @@ h1, h2, h3, h4, h5, h6 {
 .dropdown-trigger:hover,
 .nav-dropdown:hover .dropdown-trigger,
 .nav-dropdown.open .dropdown-trigger {
-  color: var(--color-accent-primary) !important;
+  color: #38bdf8 !important;
 }
 
 .dropdown-trigger .arrow {
@@ -347,13 +349,13 @@ h1, h2, h3, h4, h5, h6 {
   top: calc(100% + 8px);
   right: 0;
   min-width: 270px;
-  background: rgba(11, 17, 38, 0.96);
+  background: rgba(4, 8, 20, 0.98);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: var(--radius-lg);
   padding: var(--space-xs);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(56, 189, 248, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 20px rgba(56, 189, 248, 0.15);
   list-style: none;
   opacity: 0;
   visibility: hidden;
@@ -460,11 +462,12 @@ h1, h2, h3, h4, h5, h6 {
 /* ---------- Hero Section ---------- */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   padding: calc(var(--nav-height) + var(--space-3xl)) 0 var(--space-4xl);
   overflow: hidden;
+  background: linear-gradient(180deg, #040816 0%, #0a142c 70%, var(--color-bg-primary) 100%);
 }
 
 .hero-bg {
@@ -477,15 +480,15 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.35;
+  opacity: 0.32;
 }
 
 .hero-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 30%, rgba(56, 189, 248, 0.15) 0%, transparent 60%),
-              radial-gradient(circle at 80% 60%, rgba(129, 140, 248, 0.12) 0%, transparent 50%),
-              linear-gradient(to bottom, transparent 40%, var(--color-bg-primary) 100%);
+  background: radial-gradient(circle at 50% 30%, rgba(2, 132, 199, 0.22) 0%, transparent 60%),
+              radial-gradient(circle at 80% 60%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+              linear-gradient(to bottom, transparent 35%, var(--color-bg-primary) 100%);
   pointer-events: none;
 }
 
@@ -630,13 +633,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ---------- Countdown Strip ---------- */
 .countdown-strip {
-  background: rgba(11, 17, 38, 0.9);
+  background: #ffffff;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   padding: var(--space-lg) 0;
   position: relative;
   z-index: 2;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
 
 .countdown-inner {
@@ -651,7 +654,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 700;
-  color: #f8fafc;
+  color: var(--color-text-primary);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -666,12 +669,12 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: #f8fafc;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-sm) var(--space-md);
   min-width: 68px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-sm);
 }
 
 .countdown-number {
@@ -1018,13 +1021,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .instructor-quote {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(2, 132, 199, 0.06);
   border-left: 3px solid var(--color-accent-primary);
   padding: var(--space-sm) var(--space-md);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   font-size: 0.88rem;
   font-style: italic;
-  color: #cbd5e1;
+  color: var(--color-text-secondary);
   margin-top: auto;
 }
 
@@ -1291,7 +1294,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--space-2xl);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(56, 189, 248, 0.1);
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08), 0 0 20px rgba(2, 132, 199, 0.08);
 }
 
 .outcomes-card-header {
@@ -1305,10 +1308,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .outcomes-card-header .badge-icon {
   font-size: 2.2rem;
-  background: rgba(56, 189, 248, 0.1);
+  background: rgba(2, 132, 199, 0.08);
   padding: 10px;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  border: 1px solid rgba(2, 132, 199, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1335,7 +1338,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .outcome-stat-box {
-  background: rgba(15, 23, 42, 0.75);
+  background: #f8fafc;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-md);
@@ -1353,7 +1356,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: 1.4rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1368,7 +1371,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .takehomes-box {
-  background: rgba(8, 14, 30, 0.6);
+  background: #f1f5f9;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
@@ -1648,10 +1651,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--space-md);
   position: relative;
   z-index: 1;
+  color: var(--color-text-primary);
 }
 
 .cta-card > p {
-  color: #cbd5e1;
+  color: var(--color-text-secondary);
   font-size: 1.15rem;
   margin-bottom: var(--space-2xl);
   max-width: 600px;
@@ -1833,6 +1837,73 @@ h1, h2, h3, h4, h5, h6 {
 .reveal-delay-4 { transition-delay: 0.4s; }
 .reveal-delay-5 { transition-delay: 0.5s; }
 .reveal-delay-6 { transition-delay: 0.6s; }
+
+/* ---------- Interactive Spacecraft Cursor ---------- */
+.spacecraft-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(-100px, -100px, 0);
+  will-change: transform;
+  display: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.spacecraft-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition-base);
+  filter: drop-shadow(0 4px 10px rgba(2, 132, 199, 0.4));
+}
+
+.thruster-flame {
+  transform-origin: 21px 33px;
+  animation: thruster-pulse 0.2s infinite alternate ease-in-out;
+}
+
+@keyframes thruster-pulse {
+  0% { transform: scaleY(0.85) scaleX(0.9); opacity: 0.8; }
+  100% { transform: scaleY(1.3) scaleX(1.15); opacity: 1; }
+}
+
+.thruster-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #38bdf8 0%, rgba(249, 115, 22, 0.4) 60%, transparent 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+  animation: glow-pulse 0.35s infinite alternate;
+}
+
+@keyframes glow-pulse {
+  0% { opacity: 0.6; transform: translateX(-50%) scale(0.8); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.4); }
+}
+
+.spacecraft-hovering .spacecraft-container {
+  transform: scale(1.3);
+  filter: drop-shadow(0 6px 18px rgba(249, 115, 22, 0.6));
+}
+
+.spacecraft-hovering .thruster-flame {
+  animation: thruster-boost 0.1s infinite alternate ease-in-out;
+}
+
+@keyframes thruster-boost {
+  0% { transform: scaleY(1.3) scaleX(1.1); }
+  100% { transform: scaleY(1.9) scaleX(1.35); }
+}
 
 /* ---------- Interactive Drone Cursor ---------- */
 .drone-cursor {

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initSmoothScroll();
   initTimelineToggles();
-  initDroneCursor();
+  initInteractiveCursor();
   initRocketLaunch();
 });
 
@@ -195,38 +195,38 @@ function initTimelineToggles() {
   });
 }
 
-/* ---------- Interactive Drone Cursor ---------- */
-function initDroneCursor() {
-  const drone = document.getElementById('droneCursor');
-  if (!drone) return;
+/* ---------- Interactive Spacecraft & Drone Cursor ---------- */
+function initInteractiveCursor() {
+  const cursor = document.getElementById('spacecraftCursor') || document.getElementById('droneCursor');
+  if (!cursor) return;
 
-  // Detect touch device (drones don't make sense on touch screen cursors)
+  // Detect touch device (flight cursors don't make sense on touch screen devices)
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   if (isTouchDevice) {
-    drone.style.display = 'none';
+    cursor.style.display = 'none';
     return;
   }
 
-  drone.style.display = 'block';
+  cursor.style.display = 'block';
 
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
-  let droneX = mouseX;
-  let droneY = mouseY;
+  let cursorX = mouseX;
+  let cursorY = mouseY;
   let velocityX = 0;
 
   window.addEventListener('mousemove', (e) => {
-    // Target position is offset to the top-right of the actual cursor so it doesn't block clicks
-    mouseX = e.clientX + 20;
-    mouseY = e.clientY - 20;
+    // Target position is offset to the top-right so the spacecraft flies beside the user pointer
+    mouseX = e.clientX + 18;
+    mouseY = e.clientY - 18;
   });
 
   document.addEventListener('mouseleave', () => {
-    drone.style.opacity = '0';
+    cursor.style.opacity = '0';
   });
 
   document.addEventListener('mouseenter', () => {
-    drone.style.opacity = '1';
+    cursor.style.opacity = '1';
   });
 
   // Hover animations for interactive elements
@@ -234,41 +234,42 @@ function initDroneCursor() {
   
   document.addEventListener('mouseover', (e) => {
     if (e.target.closest(interactiveSelector)) {
-      drone.classList.add('drone-hovering');
+      cursor.classList.add('spacecraft-hovering');
+      cursor.classList.add('drone-hovering');
     }
   });
 
   document.addEventListener('mouseout', (e) => {
     if (!e.target.closest(interactiveSelector)) {
-      drone.classList.remove('drone-hovering');
+      cursor.classList.remove('spacecraft-hovering');
+      cursor.classList.remove('drone-hovering');
     }
   });
 
   function animate() {
-    // Physics lerp for smooth drone movement
-    const dx = mouseX - droneX;
-    const dy = mouseY - droneY;
+    // Physics lerp for smooth spacecraft flight
+    const dx = mouseX - cursorX;
+    const dy = mouseY - cursorY;
 
-    // Apply smooth interpolation (lerping)
-    const lerpFactor = 0.08;
-    const oldX = droneX;
-    droneX += dx * lerpFactor;
-    droneY += dy * lerpFactor;
+    const lerpFactor = 0.09;
+    const oldX = cursorX;
+    cursorX += dx * lerpFactor;
+    cursorY += dy * lerpFactor;
 
-    // Calculate current velocity
-    velocityX = droneX - oldX;
+    // Calculate velocity for aerodynamic banking
+    velocityX = cursorX - oldX;
 
-    // Calculate tilt angle based on horizontal velocity (tilt left when moving left, right when moving right)
-    const maxTilt = 20;
-    const tilt = Math.min(Math.max(velocityX * 1.5, -maxTilt), maxTilt);
+    // Calculate aerodynamic bank/tilt angle based on horizontal velocity
+    const maxTilt = 24;
+    const tilt = Math.min(Math.max(velocityX * 1.6, -maxTilt), maxTilt);
 
     // Apply transform (translate + tilt)
-    drone.style.transform = `translate3d(${droneX - 22}px, ${droneY - 22}px, 0) rotate(${tilt}deg)`;
+    cursor.style.transform = `translate3d(${cursorX - 21}px, ${cursorY - 21}px, 0) rotate(${tilt}deg)`;
 
     requestAnimationFrame(animate);
   }
 
-  // Start the render loop
+  // Start the flight render loop
   requestAnimationFrame(animate);
 }
 
