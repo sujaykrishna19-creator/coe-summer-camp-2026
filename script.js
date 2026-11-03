@@ -60,8 +60,10 @@ function initMobileMenu() {
 
 /* ---------- Countdown Timer ---------- */
 function initCountdown() {
-  // Camp starts July 13, 2026 at 9:00 AM Dubai time (UTC+4)
-  const campDate = new Date('2026-07-13T09:00:00+04:00').getTime();
+  const timerEl = document.getElementById('countdownTimer');
+  if (!timerEl) return;
+  const targetDateStr = timerEl.getAttribute('data-target-date') || '2026-12-14T09:00:00+04:00';
+  const campDate = new Date(targetDateStr).getTime();
 
   const daysEl = document.getElementById('countDays');
   const hoursEl = document.getElementById('countHours');
