@@ -14,53 +14,33 @@
 </head>
 <body>
 
-  <!-- ====== SITE HEADER & CAMP SWITCHER ====== -->
-  <header class="site-header" id="siteHeader">
-    <div class="top-camp-bar">
-      <div class="container top-camp-inner">
-        <div class="top-camp-label">
-          <span>🏛️</span> Centre of Excellence Camps:
-        </div>
-        <div class="top-camp-tabs">
-          <a href="index.html" class="camp-tab">
-            ❄️ Winter Camp 2026 <span class="tag-badge-new">Upcoming</span>
-          </a>
-          <a href="previous-camp.html" class="camp-tab active">
-            <span class="tab-dot"></span> ☀️ Previous Camp (Summer 2026)
-          </a>
-        </div>
-        <a href="https://maps.app.goo.gl/nw36X1WeYC561MJ19" target="_blank" rel="noopener" class="top-camp-loc">
-          📍 GIS Dubai Hills
-        </a>
-      </div>
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/gis-crest.png" alt="GEMS International School Crest" class="nav-logo-img" width="36" height="36">
+        <span>Engineering the Future</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" style="color: var(--color-accent-primary); font-weight: 700;">❄️ Winter Camp 2026</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#outcomes">Outcomes</a></li>
+        <li><a href="#journey">Daily Programme</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://forms.gle/BLEuKmFMfzvznZvf7" target="_blank" rel="noopener" class="nav-cta">Register Now</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <nav class="navbar" id="navbar">
-      <div class="container">
-        <a href="index.html" class="nav-logo">
-          <img src="images/gis-icon.svg" alt="GEMS International School Icon" class="nav-logo-img" width="30" height="32">
-          <span>Engineering the Future</span>
-        </a>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="index.html" style="color: var(--color-accent-primary); font-weight: 700;">❄️ Winter Camp 2026</a></li>
-          <li><a href="#activities">Activities</a></li>
-          <li><a href="#details">Details</a></li>
-          <li><a href="#outcomes">Outcomes</a></li>
-          <li><a href="#journey">Daily Programme</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="https://forms.gle/BLEuKmFMfzvznZvf7" target="_blank" rel="noopener" class="nav-cta">Register Now</a></li>
-        </ul>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-      <div class="nav-overlay" id="navOverlay"></div>
-    </nav>
-  </header>
+    <div class="nav-overlay" id="navOverlay"></div>
+  </nav>
 
   <!-- ====== HERO SECTION ====== -->
-  <section class="hero hero-with-topbar" id="hero">
+  <section class="hero" id="hero">
     <div class="hero-bg">
       <img src="images/hero-bg.png" alt="Students working in a STEM lab with robotics, drones and satellites" loading="eager">
     </div>
@@ -438,7 +418,9 @@
         <div class="partner-item">
           <span class="partner-label">Venue Partner</span>
           <a href="https://maps.app.goo.gl/nw36X1WeYC561MJ19" target="_blank" rel="noopener" class="partner-logo-link">
-            <img src="images/gis-logo-dark.svg" alt="GEMS International School Logo" class="partner-logo-img gis-logo">
+            <div class="gis-logo-plate">
+              <img src="images/gis-full-logo.png" alt="GEMS International School Dubai Hills" class="gis-full-logo-img">
+            </div>
           </a>
         </div>
       </div>
@@ -472,7 +454,7 @@
         <div class="contact-card reveal reveal-delay-1">
           <span class="contact-icon">👨‍🏫</span>
           <h3>Sujay Krishna</h3>
-          <p>Interim Excellence Fellow<br>Design & Computer Science</p>
+          <p>Excellence Fellow<br>Design & Computer Science</p>
           <p style="margin-top: 0.75rem;"><a href="mailto:s.krishna1_gis@gemsedu.com">s.krishna1_gis@gemsedu.com</a></p>
         </div>
         <div class="contact-card reveal reveal-delay-2">
@@ -490,7 +472,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="images/gis-logo-dark.svg" alt="GEMS International School Logo" class="footer-logo" width="180" style="margin-bottom: 0.75rem;">
+          <div class="gis-logo-plate" style="display: inline-flex; margin-bottom: 1.25rem;">
+            <img src="images/gis-full-logo.png" alt="GEMS International School Dubai Hills" class="gis-full-logo-img">
+          </div>
           <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text-primary);">Robotics & STEM: Engineering the Future</h4>
           <p>A Centre of Excellence initiative at GEMS International School — Dubai Hills. Inspiring the next generation of innovators through hands-on STEM experiences.</p>
         </div>

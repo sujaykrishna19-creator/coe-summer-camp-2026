@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initMobileMenu();
+  initDropdowns();
   initCountdown();
   initScrollReveal();
   initSmoothScroll();
@@ -30,7 +31,7 @@ function initNavbar() {
   handleScroll();
 }
 
-/* ---------- Mobile Menu ---------- */
+/* ---------- Mobile Menu & Dropdowns ---------- */
 function initMobileMenu() {
   const btn = document.getElementById('mobileMenuBtn');
   const navLinks = document.getElementById('navLinks');
@@ -53,8 +54,33 @@ function initMobileMenu() {
   btn.addEventListener('click', toggleMenu);
   overlay.addEventListener('click', closeMenu);
 
-  navLinks.querySelectorAll('a').forEach(link => {
+  // Close menu when clicking regular navigation links, but not dropdown triggers
+  navLinks.querySelectorAll('a:not(.dropdown-trigger)').forEach(link => {
     link.addEventListener('click', closeMenu);
+  });
+}
+
+function initDropdowns() {
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+  dropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector('.dropdown-trigger');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+    });
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', (e) => {
+    dropdowns.forEach(dropdown => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+      }
+    });
   });
 }
 

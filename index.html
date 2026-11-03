@@ -14,56 +14,51 @@
 </head>
 <body>
 
-  <!-- ====== SITE HEADER & CAMP SWITCHER ====== -->
-  <header class="site-header" id="siteHeader">
-    <div class="top-camp-bar">
-      <div class="container top-camp-inner">
-        <div class="top-camp-label">
-          <span>🏛️</span> Centre of Excellence Camps:
-        </div>
-        <div class="top-camp-tabs">
-          <a href="index.html" class="camp-tab active">
-            <span class="tab-dot"></span> ❄️ Winter Camp 2026 <span class="tag-badge-new">New</span>
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/gis-crest.png" alt="GEMS International School Crest" class="nav-logo-img" width="36" height="36">
+        <span>SpaceWise Academy</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#activities">Missions</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#team">Space Experts</a></li>
+        <li><a href="#journey">5-Day Schedule</a></li>
+        <li><a href="#outcomes">Outcomes</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="dropdown-trigger" id="dropdownTrigger" aria-haspopup="true" aria-expanded="false">
+            Previous Camps <span class="arrow">▾</span>
           </a>
-          <a href="previous-camp.html" class="camp-tab">
-            ☀️ Previous Camp (Summer 2026)
-          </a>
-        </div>
-        <a href="https://maps.app.goo.gl/nw36X1WeYC561MJ19" target="_blank" rel="noopener" class="top-camp-loc">
-          📍 GIS Dubai Hills
-        </a>
-      </div>
+          <ul class="dropdown-menu" id="dropdownMenu">
+            <li>
+              <a href="previous-camp.html">
+                <span class="dropdown-icon">☀️</span>
+                <div>
+                  <strong>Summer Camp 2026</strong>
+                  <small>Robotics & STEM: Engineering the Future</small>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#register" class="nav-cta">Register Interest</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <nav class="navbar" id="navbar">
-      <div class="container">
-        <a href="index.html" class="nav-logo">
-          <img src="images/gis-icon.svg" alt="GEMS International School Icon" class="nav-logo-img" width="30" height="32">
-          <span>SpaceWise Academy</span>
-        </a>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#overview">Overview</a></li>
-          <li><a href="#activities">Missions</a></li>
-          <li><a href="#details">Details</a></li>
-          <li><a href="#team">Space Experts</a></li>
-          <li><a href="#journey">5-Day Schedule</a></li>
-          <li><a href="#outcomes">Outcomes</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="previous-camp.html" class="nav-previous-camp" style="font-weight: 600; color: var(--color-accent-primary);">☀️ Previous Camp</a></li>
-          <li><a href="#register" class="nav-cta">Register Interest</a></li>
-        </ul>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-      <div class="nav-overlay" id="navOverlay"></div>
-    </nav>
-  </header>
+    <div class="nav-overlay" id="navOverlay"></div>
+  </nav>
 
   <!-- ====== HERO SECTION ====== -->
-  <section class="hero hero-with-topbar" id="hero">
+  <section class="hero" id="hero">
     <div class="hero-bg">
       <img src="images/winter-hero-bg.jpg" alt="Space exploration scene showing Earth orbit, rocket launch and astronaut helmet reflection" loading="eager">
     </div>
@@ -687,39 +682,6 @@
     </div>
   </section>
 
-  <!-- ====== OFFICIAL FLYERS SHOWCASE ====== -->
-  <section class="section" id="flyers">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-badge">📄 Official Programme Literature</span>
-        <h2>SpaceWise Academy <span class="gradient-text">Camp Posters</span></h2>
-        <p>Review the official Dubai landing brochures and share them with friends and family.</p>
-      </div>
-
-      <div class="flyers-grid">
-        <div class="flyer-card reveal reveal-delay-1">
-          <div class="flyer-card-header">
-            <h4>SpaceWise Academy — Dubai Landing</h4>
-            <span>14–18 Dec 2026</span>
-          </div>
-          <div class="flyer-img-wrapper">
-            <img src="images/winter-camp-flyer-1.png" alt="SpaceWise Academy Winter Camp Poster 1" class="flyer-img">
-          </div>
-        </div>
-
-        <div class="flyer-card reveal reveal-delay-2">
-          <div class="flyer-card-header">
-            <h4>Curriculum & Lead Instructors</h4>
-            <span>Kate Arkless Gray & Michael Flachbart</span>
-          </div>
-          <div class="flyer-img-wrapper">
-            <img src="images/winter-camp-flyer-2.png" alt="SpaceWise Academy Winter Camp Poster 2" class="flyer-img">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ====== PARTNER STRIP ====== -->
   <div class="partner-strip">
     <div class="container">
@@ -735,7 +697,9 @@
         <div class="partner-item">
           <span class="partner-label">Venue & Host Partner</span>
           <a href="https://maps.app.goo.gl/nw36X1WeYC561MJ19" target="_blank" rel="noopener" class="partner-logo-link">
-            <img src="images/gis-logo-dark.svg" alt="GEMS International School Logo" class="partner-logo-img gis-logo">
+            <div class="gis-logo-plate">
+              <img src="images/gis-full-logo.png" alt="GEMS International School Dubai Hills" class="gis-full-logo-img">
+            </div>
           </a>
         </div>
       </div>
@@ -792,7 +756,7 @@
         <div class="contact-card reveal reveal-delay-1">
           <span class="contact-icon">👨‍🏫</span>
           <h3>Sujay Krishna</h3>
-          <p>Interim Excellence Fellow<br>Design & Computer Science</p>
+          <p>Excellence Fellow<br>Design & Computer Science</p>
           <p style="margin-top: 0.75rem;"><a href="mailto:s.krishna1_gis@gemsedu.com">s.krishna1_gis@gemsedu.com</a></p>
         </div>
         <div class="contact-card reveal reveal-delay-2">
@@ -810,7 +774,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="images/gis-logo-dark.svg" alt="GEMS International School Logo" class="footer-logo" width="180">
+          <div class="gis-logo-plate" style="display: inline-flex; margin-bottom: 1.25rem;">
+            <img src="images/gis-full-logo.png" alt="GEMS International School Dubai Hills" class="gis-full-logo-img">
+          </div>
           <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text-primary);">SpaceWise Academy · Winter Camp 2026</h4>
           <p>A Centre of Excellence initiative at GEMS International School — Dubai Hills, delivered in partnership with EverCurious Space. Inspiring future aerospace pioneers through hands-on discovery.</p>
         </div>
