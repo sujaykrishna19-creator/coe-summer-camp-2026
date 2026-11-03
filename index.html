@@ -62,17 +62,37 @@
       <img src="images/winter-hero-bg.jpg" alt="Space exploration scene showing Earth orbit, rocket launch and astronaut helmet reflection" loading="eager">
     </div>
     <div class="hero-glow"></div>
-    <div class="particles">
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
+    <div class="particles" aria-hidden="true">
+      <span class="star star-gold star-lg" style="top: 8%; left: 12%; animation-delay: 0s;">✦</span>
+      <span class="star star-cyan star-md" style="top: 14%; left: 88%; animation-delay: 1.2s;"></span>
+      <span class="star star-white star-sm" style="top: 22%; left: 24%; animation-delay: 0.6s;"></span>
+      <span class="star star-sparkle star-cyan" style="top: 18%; left: 42%; animation-delay: 2.1s;">✦</span>
+      <span class="star star-gold star-sm" style="top: 28%; left: 78%; animation-delay: 1.8s;"></span>
+      <span class="star star-white star-md" style="top: 35%; left: 6%; animation-delay: 2.5s;"></span>
+      <span class="star star-indigo star-sm" style="top: 42%; left: 92%; animation-delay: 0.9s;"></span>
+      <span class="star star-sparkle star-gold" style="top: 38%; left: 68%; animation-delay: 3.2s;">✦</span>
+      <span class="star star-cyan star-sm" style="top: 50%; left: 18%; animation-delay: 1.5s;"></span>
+      <span class="star star-white star-lg" style="top: 58%; left: 84%; animation-delay: 2.8s;">✦</span>
+      <span class="star star-gold star-md" style="top: 64%; left: 32%; animation-delay: 0.4s;"></span>
+      <span class="star star-cyan star-lg" style="top: 72%; left: 74%; animation-delay: 3.6s;">✦</span>
+      <span class="star star-white star-sm" style="top: 78%; left: 14%; animation-delay: 1.1s;"></span>
+      <span class="star star-sparkle star-indigo" style="top: 82%; left: 52%; animation-delay: 2.3s;">✦</span>
+      <span class="star star-gold star-sm" style="top: 88%; left: 88%; animation-delay: 0.7s;"></span>
+      <span class="star star-cyan star-md" style="top: 92%; left: 38%; animation-delay: 3.0s;"></span>
+      <span class="star star-white star-sm" style="top: 11%; left: 62%; animation-delay: 1.7s;"></span>
+      <span class="star star-gold star-md" style="top: 24%; left: 95%; animation-delay: 2.9s;"></span>
+      <span class="star star-cyan star-sm" style="top: 32%; left: 50%; animation-delay: 0.3s;"></span>
+      <span class="star star-sparkle star-white" style="top: 48%; left: 80%; animation-delay: 2.6s;">✦</span>
+      <span class="star star-gold star-sm" style="top: 55%; left: 5%; animation-delay: 1.4s;"></span>
+      <span class="star star-indigo star-md" style="top: 68%; left: 44%; animation-delay: 3.4s;"></span>
+      <span class="star star-white star-sm" style="top: 85%; left: 28%; animation-delay: 0.8s;"></span>
+      <span class="star star-cyan star-lg" style="top: 6%; left: 35%; animation-delay: 2.0s;">✦</span>
+      <span class="star star-sparkle star-gold" style="top: 15%; left: 72%; animation-delay: 1.0s;">✦</span>
+      <span class="star star-white star-md" style="top: 45%; left: 3%; animation-delay: 3.1s;"></span>
+      <span class="star star-cyan star-sm" style="top: 62%; left: 96%; animation-delay: 1.6s;"></span>
+      <span class="star star-gold star-md" style="top: 76%; left: 48%; animation-delay: 2.4s;"></span>
+      <span class="star star-white star-sm" style="top: 90%; left: 65%; animation-delay: 0.5s;"></span>
+      <span class="star star-indigo star-sm" style="top: 29%; left: 34%; animation-delay: 3.7s;"></span>
     </div>
     <div class="container">
       <div class="hero-content">
@@ -742,29 +762,51 @@
     </div>
   </footer>
 
-  <!-- ====== INTERACTIVE SPACECRAFT CURSOR ====== -->
-  <div class="spacecraft-cursor" id="spacecraftCursor">
-    <div class="spacecraft-container">
-      <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Thruster Flame Plume -->
-        <path class="thruster-flame" d="M21 33 L18 41 L21 38 L24 41 Z" fill="url(#flameGradient)"/>
-        <!-- Aerodynamic Spacecraft Shuttle Body -->
-        <path d="M21 2 L26 15 L26 27 L33 31 L33 34 L25 31 L24 34 L18 34 L17 31 L9 34 L9 31 L16 27 L16 15 Z" fill="#ffffff" stroke="#0284c7" stroke-width="1.6" stroke-linejoin="round"/>
-        <!-- Solar Arrays / Wing Tech Trim -->
-        <path d="M10 32 L15 28 M32 32 L27 28" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
-        <!-- Cockpit Glass Canopy -->
-        <path d="M21 8 L23 15 L19 15 Z" fill="#0284c7"/>
-        <!-- Heat Shield Nose -->
-        <circle cx="21" cy="4" r="1.5" fill="#ea580c"/>
+  <!-- ====== INTERACTIVE ROCKET CURSOR ====== -->
+  <div class="rocket-cursor" id="rocketCursor">
+    <div class="rocket-container">
+      <svg width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="flameGradient" x1="21" y1="33" x2="21" y2="41" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#38bdf8"/>
-            <stop offset="0.5" stop-color="#f59e0b"/>
-            <stop offset="1" stop-color="#ea580c"/>
+          <linearGradient id="rocketBodyGrad" x1="18" y1="14" x2="30" y2="14" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#f1f5f9"/>
+            <stop offset="35%" stop-color="#ffffff"/>
+            <stop offset="100%" stop-color="#cbd5e1"/>
+          </linearGradient>
+          <linearGradient id="rocketNoseGrad" x1="18" y1="2" x2="30" y2="14" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#ef4444"/>
+            <stop offset="100%" stop-color="#b91c1c"/>
+          </linearGradient>
+          <linearGradient id="flameOuterGrad" x1="24" y1="39" x2="24" y2="55" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#f59e0b"/>
+            <stop offset="50%" stop-color="#ea580c"/>
+            <stop offset="100%" stop-color="rgba(220, 38, 38, 0)"/>
+          </linearGradient>
+          <linearGradient id="flameInnerGrad" x1="24" y1="39" x2="24" y2="49" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="60%" stop-color="#fef08a"/>
+            <stop offset="100%" stop-color="#f59e0b"/>
           </linearGradient>
         </defs>
+        <!-- Thruster Flame Exhaust Plume -->
+        <path class="rocket-flame-outer" d="M20 40 Q24 55 24 55 Q24 55 28 40 Z" fill="url(#flameOuterGrad)"/>
+        <path class="rocket-flame-inner" d="M22 40 Q24 49 24 49 Q24 49 26 40 Z" fill="url(#flameInnerGrad)"/>
+        <!-- Aerodynamic Delta Fins -->
+        <path d="M18 27 L9 39 L18 37 Z" fill="#dc2626" stroke="#991b1b" stroke-width="1" stroke-linejoin="round"/>
+        <path d="M30 27 L39 39 L30 37 Z" fill="#dc2626" stroke="#991b1b" stroke-width="1" stroke-linejoin="round"/>
+        <!-- Rocket Cylindrical Fuselage -->
+        <rect x="18" y="13" width="12" height="24" rx="1" fill="url(#rocketBodyGrad)" stroke="#94a3b8" stroke-width="1"/>
+        <!-- Aerospace Blue Trim Stripe -->
+        <rect x="18" y="28" width="12" height="3" fill="#0284c7"/>
+        <!-- Rocket Nose Cone -->
+        <path d="M24 2 C21 6 18 10 18 14 L30 14 C30 10 27 6 24 2 Z" fill="url(#rocketNoseGrad)" stroke="#991b1b" stroke-width="1"/>
+        <!-- Porthole Window Bezel & Reflective Glass -->
+        <circle cx="24" cy="21" r="3.8" fill="#334155"/>
+        <circle cx="24" cy="21" r="3" fill="#38bdf8"/>
+        <circle cx="23" cy="20" r="1" fill="#ffffff" opacity="0.85"/>
+        <!-- Rocket Engine Nozzle Bell -->
+        <path d="M20 37 L19 40 L29 40 L28 37 Z" fill="#1e293b" stroke="#0f172a" stroke-width="0.8"/>
       </svg>
-      <div class="thruster-glow"></div>
+      <div class="rocket-thruster-glow"></div>
     </div>
   </div>
 

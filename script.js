@@ -195,9 +195,9 @@ function initTimelineToggles() {
   });
 }
 
-/* ---------- Interactive Spacecraft & Drone Cursor ---------- */
+/* ---------- Interactive Rocket, Spacecraft & Drone Cursor ---------- */
 function initInteractiveCursor() {
-  const cursor = document.getElementById('spacecraftCursor') || document.getElementById('droneCursor');
+  const cursor = document.getElementById('rocketCursor') || document.getElementById('spacecraftCursor') || document.getElementById('droneCursor');
   if (!cursor) return;
 
   // Detect touch device (flight cursors don't make sense on touch screen devices)
@@ -216,9 +216,9 @@ function initInteractiveCursor() {
   let velocityX = 0;
 
   window.addEventListener('mousemove', (e) => {
-    // Target position is offset to the top-right so the spacecraft flies beside the user pointer
-    mouseX = e.clientX + 18;
-    mouseY = e.clientY - 18;
+    // Target position is offset to the top-right so the rocket flies beside the user pointer
+    mouseX = e.clientX + 20;
+    mouseY = e.clientY - 20;
   });
 
   document.addEventListener('mouseleave', () => {
@@ -230,10 +230,11 @@ function initInteractiveCursor() {
   });
 
   // Hover animations for interactive elements
-  const interactiveSelector = 'a, button, [role="button"], .timeline-toggle, .mobile-menu-btn';
+  const interactiveSelector = 'a, button, [role="button"], .timeline-toggle, .mobile-menu-btn, input, select, textarea';
   
   document.addEventListener('mouseover', (e) => {
     if (e.target.closest(interactiveSelector)) {
+      cursor.classList.add('rocket-hovering');
       cursor.classList.add('spacecraft-hovering');
       cursor.classList.add('drone-hovering');
     }
@@ -241,13 +242,14 @@ function initInteractiveCursor() {
 
   document.addEventListener('mouseout', (e) => {
     if (!e.target.closest(interactiveSelector)) {
+      cursor.classList.remove('rocket-hovering');
       cursor.classList.remove('spacecraft-hovering');
       cursor.classList.remove('drone-hovering');
     }
   });
 
   function animate() {
-    // Physics lerp for smooth spacecraft flight
+    // Physics lerp for smooth rocket flight
     const dx = mouseX - cursorX;
     const dy = mouseY - cursorY;
 
@@ -264,7 +266,7 @@ function initInteractiveCursor() {
     const tilt = Math.min(Math.max(velocityX * 1.6, -maxTilt), maxTilt);
 
     // Apply transform (translate + tilt)
-    cursor.style.transform = `translate3d(${cursorX - 21}px, ${cursorY - 21}px, 0) rotate(${tilt}deg)`;
+    cursor.style.transform = `translate3d(${cursorX - 24}px, ${cursorY - 24}px, 0) rotate(${tilt}deg)`;
 
     requestAnimationFrame(animate);
   }
