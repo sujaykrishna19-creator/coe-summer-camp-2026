@@ -2352,3 +2352,204 @@ h1, h2, h3, h4, h5, h6 {
 .nav-overlay.open {
   display: block;
 }
+
+/* ---------- Landscape Poster Card Component ---------- */
+.landscape-poster-card {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: radial-gradient(circle at 50% 25%, #0d1e46 0%, #060e22 65%, #030714 100%);
+  border: 2px solid rgba(56, 189, 248, 0.35);
+  border-radius: 20px;
+  padding: 32px 36px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(2, 132, 199, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.landscape-poster-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('images/poster-bg-landscape.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+
+.landscape-poster-card:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 45px rgba(56, 189, 248, 0.4);
+}
+
+.lpc-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 14px;
+}
+
+.lpc-center {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: auto 0;
+}
+
+.lpc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(2, 132, 199, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.lpc-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.lpc-sub {
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 4px;
+  margin-bottom: 18px;
+}
+
+.lpc-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.lpc-pill {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 10px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.lpc-pill .icon {
+  font-size: 1.2rem;
+}
+
+.lpc-pill .lbl {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #38bdf8;
+  font-weight: 700;
+  text-align: left;
+}
+
+.lpc-pill .val {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: left;
+}
+
+.lpc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #4f46e5 100%);
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.landscape-poster-card:hover .lpc-btn {
+  transform: scale(1.03);
+}
+
+.lpc-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 12px;
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.lpc-fullscreen-link {
+  color: #38bdf8;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .landscape-poster-card {
+    aspect-ratio: auto;
+    padding: 24px 16px;
+  }
+  .lpc-title {
+    font-size: 2rem;
+  }
+  .lpc-sub {
+    font-size: 1.2rem;
+  }
+  .lpc-details {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .lpc-pill {
+    width: 100%;
+  }
+  .lpc-header,
+  .lpc-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+

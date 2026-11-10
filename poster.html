@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceWise Academy — Winter STEM Camp 2026 | Poster</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: #030712;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top bar for user controls */
+    .controls-bar {
+      width: 100%;
+      max-width: 1120px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-back {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .btn-back:hover {
+      color: #38bdf8;
+    }
+
+    .btn-print {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-print:hover {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    /* Landscape Poster Frame (16:9 ratio) */
+    .poster-link-wrapper {
+      width: 100%;
+      max-width: 1120px;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .poster-card {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: radial-gradient(circle at 50% 20%, #0d1e46 0%, #060e22 60%, #030714 100%);
+      border: 2px solid rgba(56, 189, 248, 0.3);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      padding: 44px 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 50px rgba(2, 132, 199, 0.25);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .poster-link-wrapper:hover .poster-card {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 60px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Ambient Space Artwork & Stars */
+    .poster-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/poster-bg-landscape.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.22;
+      mix-blend-mode: lighten;
+      pointer-events: none;
+    }
+
+    .poster-glow {
+      position: absolute;
+      top: -20%;
+      left: 30%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    /* Subtle Twinkling Stars */
+    .star {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: twinkle 3s infinite alternate;
+    }
+    .s1 { top: 15%; left: 10%; width: 3px; height: 3px; }
+    .s2 { top: 25%; left: 88%; width: 4px; height: 4px; box-shadow: 0 0 8px #38bdf8; }
+    .s3 { top: 75%; left: 14%; width: 3px; height: 3px; }
+    .s4 { top: 82%; left: 80%; width: 4px; height: 4px; box-shadow: 0 0 8px #f59e0b; }
+    .s5 { top: 35%; left: 45%; width: 2px; height: 2px; }
+
+    @keyframes twinkle {
+      0% { opacity: 0.3; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* Poster Header */
+    .poster-header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 18px;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .logo-text h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+    .logo-text p {
+      font-size: 0.75rem;
+      color: #38bdf8;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .partner-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .partner-badge strong {
+      color: #ffffff;
+    }
+    .partner-badge img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    /* Poster Center Content: Clean & Bold Title */
+    .poster-center {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin: auto 0;
+    }
+
+    .camp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(2, 132, 199, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .poster-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3.8rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .poster-subtitle {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: 6px;
+      margin-bottom: 24px;
+    }
+
+    /* Simple Details Row (Dates, Time, Grades, Fee) */
+    .details-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .detail-pill {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 12px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      backdrop-filter: blur(8px);
+    }
+
+    .detail-pill .icon {
+      font-size: 1.35rem;
+    }
+
+    .detail-pill .label {
+      display: block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #38bdf8;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .detail-pill .value {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #ffffff;
+      text-align: left;
+    }
+
+    /* Prominent Call to Action Button */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #4f46e5 100%);
+      color: #ffffff;
+      padding: 16px 40px;
+      border-radius: 999px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5), 0 0 20px rgba(56, 189, 248, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.25s ease;
+    }
+
+    .poster-link-wrapper:hover .cta-button {
+      transform: scale(1.04);
+      box-shadow: 0 10px 35px rgba(56, 189, 248, 0.7);
+    }
+
+    .click-prompt {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      letter-spacing: 0.04em;
+    }
+
+    /* Poster Footer */
+    .poster-footer {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 16px;
+      font-size: 0.82rem;
+      color: #94a3b8;
+    }
+
+    .poster-footer strong {
+      color: #ffffff;
+    }
+
+    /* Print Formatting: Crisp landscape output */
+    @media print {
+      @page {
+        size: landscape;
+        margin: 0;
+      }
+      body {
+        background: #030714 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .controls-bar {
+        display: none !important;
+      }
+      .poster-link-wrapper {
+        max-width: 100vw !important;
+        width: 100vw !important;
+        height: 100vh !important;
+      }
+      .poster-card {
+        width: 100vw !important;
+        height: 100vh !important;
+        border-radius: 0 !important;
+        border: none !important;
+        padding: 36px 48px !important;
+      }
+    }
+
+    /* Mobile scaling */
+    @media (max-width: 768px) {
+      .poster-card {
+        aspect-ratio: auto;
+        padding: 30px 20px;
+      }
+      .poster-title {
+        font-size: 2.5rem;
+      }
+      .poster-subtitle {
+        font-size: 1.4rem;
+      }
+      .details-row {
+        gap: 10px;
+      }
+      .detail-pill {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .poster-header,
+      .poster-footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Controls Bar (Hidden during printing) -->
+  <div class="controls-bar">
+    <a href="index.html" class="btn-back">
+      ← Back to Camp Website
+    </a>
+    <div style="display: flex; gap: 10px;">
+      <a href="index.html#register" class="btn-print" style="text-decoration: none;">
+        🚀 Go Directly to Registration Form
+      </a>
+      <button class="btn-print" onclick="window.print()">
+        🖨️ Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- Entire Poster links directly to Registration Form -->
+  <a href="index.html#register" class="poster-link-wrapper" id="posterRegistrationLink" title="Click to open registration form">
+    <div class="poster-card">
+      <!-- Background Ambient Glow & Stars -->
+      <div class="poster-bg"></div>
+      <div class="poster-glow"></div>
+      <span class="star s1"></span>
+      <span class="star s2"></span>
+      <span class="star s3"></span>
+      <span class="star s4"></span>
+      <span class="star s5"></span>
+
+      <!-- 1. Header: School & Delivery Partner -->
+      <div class="poster-header">
+        <div class="logo-group">
+          <img src="images/gis-crest.png" alt="GEMS International School Crest" class="logo-img">
+          <div class="logo-text">
+            <h3>Centre of Excellence</h3>
+            <p>GEMS International School · Dubai Hills</p>
+          </div>
+        </div>
+
+        <div class="partner-badge">
+          <span>In Partnership with:</span>
+          <strong>EverCurious Space</strong>
+          <img src="images/evercurious-logo.png" alt="EverCurious Space Logo">
+        </div>
+      </div>
+
+      <!-- 2. Center: Just Title & Essential Details (Start & Time) -->
+      <div class="poster-center">
+        <div class="camp-badge">
+          🚀 Winter Break STEM Immersion
+        </div>
+
+        <h1 class="poster-title">SpaceWise Academy</h1>
+        <h2 class="poster-subtitle">Winter STEM Camp 2026</h2>
+
+        <!-- The Essential Details: Dates, Timing, Grades, Location, Fee -->
+        <div class="details-row">
+          <div class="detail-pill">
+            <span class="icon">📅</span>
+            <div>
+              <span class="label">Dates</span>
+              <span class="value">14 – 18 December 2026</span>
+            </div>
+          </div>
+
+          <div class="detail-pill">
+            <span class="icon">⏰</span>
+            <div>
+              <span class="label">Timing</span>
+              <span class="value">9:00 AM – 3:30 PM daily</span>
+            </div>
+          </div>
+
+          <div class="detail-pill">
+            <span class="icon">👥</span>
+            <div>
+              <span class="label">Audience</span>
+              <span class="value">Grades 6 – 10 (All Schools)</span>
+            </div>
+          </div>
+
+          <div class="detail-pill">
+            <span class="icon">📍</span>
+            <div>
+              <span class="label">Venue</span>
+              <span class="value">GIS Dubai Hills (COE)</span>
+            </div>
+          </div>
+
+          <div class="detail-pill">
+            <span class="icon">💰</span>
+            <div>
+              <span class="label">Total Fee</span>
+              <span class="value">AED 1,800 All-Inclusive</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Big, Unmissable Clickable Call-to-Action -->
+        <div>
+          <div class="cta-button">
+            <span>🚀 Click Here to Register Now →</span>
+          </div>
+          <p class="click-prompt">Tap or click anywhere on this poster to open the official registration form</p>
+        </div>
+      </div>
+
+      <!-- 3. Footer: Simple Contact Info -->
+      <div class="poster-footer">
+        <div>
+          <span>Organised by <strong>GEMS International School</strong> & <strong>EverCurious Space</strong></span>
+        </div>
+        <div>
+          <span>Contact: <strong>s.krishna1_gis@gemsedu.com</strong> (Mr. Sujay Krishna · Excellence Fellow)</span>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <script>
+    // Support custom registration link via query parameter: poster.html?form=https://your-form-url
+    const urlParams = new URLSearchParams(window.location.search);
+    const customFormUrl = urlParams.get('form') || urlParams.get('url') || urlParams.get('link');
+    if (customFormUrl) {
+      const link = document.getElementById('posterRegistrationLink');
+      if (link) {
+        link.href = decodeURIComponent(customFormUrl);
+      }
+    }
+  </script>
+</body>
+</html>
